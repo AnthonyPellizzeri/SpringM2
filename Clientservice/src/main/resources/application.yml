@@ -1,1 +1,17 @@
-port
+server:
+  port: 8080
+
+spring:
+  config:
+    name: clientService
+  datasource:
+    initialization-mode: always
+    username: postgres
+    password: client
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/client
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    show-sql: true
