@@ -2,6 +2,8 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: clientService
   config:
     name: clientService
   datasource:
@@ -15,3 +17,10 @@ spring:
       ddl-auto: create
     database: postgresql
     show-sql: true
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        hostname: localhost
+        register-health-check: false
