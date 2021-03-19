@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  service-client:
+    build:
+      context: $PWD/Clientservice/
+    ports:
+      - "8080:8080"
+    networks:
+      - springm2_shared
+networks: 
+  springm2_shared:
+    external: true 
+volumes:
+  db_data:

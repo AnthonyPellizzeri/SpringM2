@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: clientService
-  config:
-    name: clientService
   datasource:
     initialization-mode: always
     username: postgres
@@ -24,3 +22,20 @@ spring:
         instanceId: ${spring.application.name}:${random.value}
         hostname: localhost
         register-health-check: false
+
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres-client:5432/client
+    username: postgres
+    password: client
+  cloud:
+    consul:
+      host: consul
+      discovery:
+        hostname: clientService
+        instance-id: ${spring.application.name}:instance_${random.value}
+        prefer-ip-address: true
+  config:
+    activate:
+      on-profile: docker
