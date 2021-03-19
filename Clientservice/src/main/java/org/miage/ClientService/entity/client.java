@@ -1,4 +1,4 @@
-package org.miage.Clientservice.Clientservice.entity;
+package org.miage.clientservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

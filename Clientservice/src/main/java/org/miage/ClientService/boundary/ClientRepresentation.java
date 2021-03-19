@@ -1,6 +1,6 @@
-package org.miage.Clientservice.Clientservice.boundary;
+package org.miage.clientservice.boundary;
 
-import org.miage.Clientservice.Clientservice.entity.client;
+import org.miage.clientservice.entity.client;
 import org.springframework.hateoas.server.ExposesResourceFor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package org.miage.Clientservice.Clientservice;
+package org.miage.clientservice;
 
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class ClientserviceApplication {
+public class ClientServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClientserviceApplication.class, args);
+		SpringApplication.run(ClientServiceApplication.class, args);
 	}
 	@Bean
 	public OpenAPI customOpenAPI() {

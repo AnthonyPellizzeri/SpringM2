@@ -1,6 +1,6 @@
-package org.miage.Clientservice.Clientservice.boundary;
+package org.miage.clientservice.boundary;
 
-import org.miage.Clientservice.Clientservice.entity.client;
+import org.miage.clientservice.entity.client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
