@@ -11,12 +11,9 @@ Excécuter la commande ci-dessous sur chaque service
 
 Puis lancer la commande:
 
-
-==> docker-compose -f docker-compose.microservices.yml build
-
 ==> docker-compose -f docker-compose.microservices.yml up -d
 
-###  Etape 3 : utiliser l'api
+###  Etape 3 : utiliser les api
 
 ### Etape 4 : fermer tous les docker
 ==> docker-compose -f docker-compose.microservices.yml stop

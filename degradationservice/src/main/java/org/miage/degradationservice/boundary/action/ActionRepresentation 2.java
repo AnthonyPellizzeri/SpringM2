@@ -58,7 +58,7 @@ public class ActionRepresentation {
                 .filter(Optional::isPresent)
                 .map(i -> {
                    i.get().setEtat(action.getEtat());
-                    i.get().setStatus(action.getStatus());
+                    i.get().setStatut(action.getStatus());
                     i.get().setResponsable(action.getResponsable());
                     i.get().setDate(action.getDate());
                     return ResponseEntity.ok(actionToResource(i.get(), true));

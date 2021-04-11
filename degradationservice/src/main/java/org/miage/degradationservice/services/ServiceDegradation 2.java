@@ -62,7 +62,7 @@ public class ServiceDegradation {
     }
 
     public ResponseEntity<?> UpdateDegradation(String id, Degradation degrad){
-        if(ServiceActions.getLastAction(id).getStatus().equals(StatutDegradation.ACTIF)
+        if(ServiceActions.getLastAction(id).getStatut().equals(StatutDegradation.ACTIF)
         && ServiceActions.getLastAction(id).getEtat().equals(Etat.ETUDE)){
             Optional<Degradation> body = Optional.ofNullable(degrad);
             if(!body.isPresent()){
