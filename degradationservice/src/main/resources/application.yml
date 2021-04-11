@@ -1,19 +1,15 @@
 server:
-  port: 8080
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  port: 8081
+
 spring:
   application:
-    name: clientService
+    name: degradationService
   datasource:
     initialization-mode: always
     username: postgres
-    password: client
+    password: degrad
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/client
+    url: jdbc:postgresql://localhost:5433/degrad
   jpa:
     hibernate:
       ddl-auto: create
@@ -34,14 +30,14 @@ security:
 ---
 spring:
   datasource:
-    url: jdbc:postgresql://postgres-client:5432/client
+    url: jdbc:postgresql://postgres-degradation:5432/degrad
     username: postgres
-    password: client
+    password: degrad
   cloud:
     consul:
       host: consul
       discovery:
-        hostname: clientService
+        hostname: degradationService
         instance-id: ${spring.application.name}:instance_${random.value}
         prefer-ip-address: true
   config:

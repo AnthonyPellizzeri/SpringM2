@@ -1,0 +1,40 @@
+server:
+  port: 9191
+  error:
+    include-message: always
+spring:
+  application:
+    name: oauth-service
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:postgresql://localhost:5434/oauth
+    username: postgres
+    password: oauth
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+        register-health-check: false
+
+---
+spring:
+  datasource:
+    username: postgres
+    password: oauth
+    url: jdbc:postgresql://postgres-oauth:5432/oauth
+  cloud:
+    consul:
+      host: consul
+      discovery:
+        hostname: oauth-service
+        instance-id: ${spring.application.name}:instance_${random.value}
+        prefer-ip-address: true
+  config:
+    activate:
+      on-profile: docker
